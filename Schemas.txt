@@ -1,0 +1,29 @@
+PRAGMA foreign_keys = ON;
+
+-- 1. Robot entity
+CREATE TABLE Robot (
+  robot_id INTEGER PRIMARY KEY,
+  name     TEXT    NOT NULL
+);
+
+-- 2. TargetInterval entity
+CREATE TABLE TargetInterval (
+  interval_id    INTEGER PRIMARY KEY AUTOINCREMENT,
+  start_time_sec INTEGER NOT NULL,
+  end_time_sec   INTEGER NOT NULL,
+  event_type     TEXT    NOT NULL
+);
+
+-- 3. SensorReading entity (folds in both 1:N relationships)
+CREATE TABLE SensorReading (
+  robot_id    INTEGER NOT NULL,    -- FK for HasReading (every reading has a robot)
+  timestamp   INTEGER NOT NULL,    -- seconds since start
+  x_cm        REAL    NOT NULL,
+  y_cm        REAL    NOT NULL,
+  interval_id INTEGER,             -- FK for OccursDuring (nullable: readings outside intervals)
+  PRIMARY KEY (robot_id, timestamp),
+  FOREIGN KEY (robot_id)
+    REFERENCES Robot(robot_id),
+  FOREIGN KEY (interval_id)
+    REFERENCES TargetInterval(interval_id)
+);
