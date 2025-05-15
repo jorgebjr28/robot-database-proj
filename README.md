@@ -18,6 +18,12 @@ The relationships show that:
 - SensorReadings *occur in* TargetIntervals (when the timestamp falls within the interval's time range)
 
 ## Relational Schema
+```
+Robot(robot_id: INTEGER, name: TEXT)
+TargetInterval(interval_id: INTEGER, start_time_sec: INTEGER, end_time_sec: INTEGER, event_type: TEXT)
+SensorReading(robot_id: INTEGER, timestamp: INTEGER, x_cm: REAL, y_cm: REAL, interval_id: INTEGER)
+```
+## Building the Database
 
 The database schema is implemented with the following tables:
 
@@ -51,7 +57,6 @@ CREATE TABLE SensorReading (
 );
 ```
 
-## Building the Database
 
 This project includes two Python scripts to create and populate the SQLite database:
 
