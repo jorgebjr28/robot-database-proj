@@ -121,3 +121,36 @@ The CSV files should be organized as follows:
 - `csv/t1.csv` through `csv/t5.csv`: Contain trajectory data (x,y coordinates) for each robot
 
 Make sure these files exist in the `csv` directory before running the data loading script.
+
+## Analysis Results
+
+Below are the results from our database analysis tasks:
+
+### Task 3: Robot Position Metadata Analysis
+
+#### Task 3.1: X Coordinate Range per Robot
+This query identifies the minimum and maximum X coordinates for each robot:
+
+![Task 3.1 Output](outputs/Task_3.1_output.png)
+
+#### Task 3.2: Y Coordinate Range per Robot
+This query identifies the minimum and maximum Y coordinates for each robot:
+
+![Task 3.2 Output](outputs/Task_3.2_output.png)
+
+### Task 4: Trajectory and Proximity Analysis
+
+#### Task 4.1: Bounding Box Analysis
+The overall bounding box for all robot movements:
+
+![Task 4.1 Output](outputs/Task_4.1_output.png)
+
+#### Task 4.2: Robot Proximity Duration
+Analysis of how long robots were in close proximity:
+
+![Task 4.2 Output](outputs/Task_4.2_output.png)
+
+#### Task 4.3: Average Speed per Interval
+Average robot speed during each interval and whether it was less than 0.2 cm/s:
+
+![Task 4.3 Output](outputs/Task_4.3_BONUS_output.png)
