@@ -1,5 +1,9 @@
 # Robot Sensor Database Project
 
+**Team Members:**  
+Jorge Benitez  
+Aleksander Marquez
+
 This project implements a database for storing and analyzing robot sensor readings that occur during specific time intervals.
 
 ## Entity-Relationship Model
