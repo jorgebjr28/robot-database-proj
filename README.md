@@ -19,9 +19,9 @@ The relationships show that:
 
 ## Relational Schema
 ```
-Robot(robot_id: INTEGER, name: TEXT)
-TargetInterval(interval_id: INTEGER, start_time_sec: INTEGER, end_time_sec: INTEGER, event_type: TEXT)
-SensorReading(robot_id: INTEGER, timestamp: INTEGER, x_cm: REAL, y_cm: REAL, interval_id: INTEGER)
+Robot(<u>robot_id</u>: INTEGER, name: TEXT)
+TargetInterval(<u>interval_id</u>: INTEGER, start_time_sec: INTEGER, end_time_sec: INTEGER, event_type: TEXT)
+SensorReading(<u>robot_id, timestamp</u>: INTEGER, x_cm: REAL, y_cm: REAL, interval_id: INTEGER)
 ```
 ## Building the Database
 
